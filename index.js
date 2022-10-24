@@ -11,6 +11,8 @@ const fishTaste = document.querySelector('#taste')
 const fishTexture = document.querySelector('#texture')
 const fishNavList = document.querySelector('#fish_list')
 
+
+
 fetch('https://www.fishwatch.gov/api/species')
  .then(response => response.json() )
  .then(fetchedItems => {
@@ -36,7 +38,9 @@ fetch('https://www.fishwatch.gov/api/species')
 
 function displayInfo(fishItem) {
     topFishName.textContent = fishItem['Species Name']
-    fishImage.src = fishItem['Image Gallery'][0].src
+    if (fishItem['Image Gallery'] === null) {
+    fishImage.textContent = 'No Image Available'} else {
+    fishImage.src = fishItem['Image Gallery'][0].src}
     fishPhysicalDescription.textContent = fishItem['Physical Description']
     .replace('<ul>', '').replace('</ul>', '').replace('<li>', '').replace('</li>','')
     fishCalories.textContent = fishItem['Calories']
@@ -44,7 +48,8 @@ function displayInfo(fishItem) {
     fishTotalFat.textContent = fishItem['Total Fat']
     fishCarbohydrate.textContent = fishItem['Carbohydrate']
 
-    
+    fishTaste.textContent = fishItem['Taste'].replace('<p>', '').replace('</p>', '').replace('&nbsp;', '')
+    fishTexture.textContent = fishItem['Texture']
     
 }
  
