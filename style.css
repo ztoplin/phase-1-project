@@ -1,16 +1,41 @@
 body {
     box-sizing: border-box;
-    margin: 0;
-    font-family: “Open Sans”, sans-serif;
-    font-size: 14px;
-    background-color: rgb(113, 185, 205);
+    margin: 1;
+    font-family: “Gloria Hallelujah”, cursive;
+    font-size: 24px;
+    --wave: #cfd8dc;
+    --bg: #e1e1e1;
+  
+    background: linear-gradient(135deg, var(--bg) 25%, transparent 25%) -50px 0,
+      linear-gradient(225deg, var(--bg) 25%, transparent 25%) -50px 0,
+      linear-gradient(315deg, var(--bg) 25%, transparent 25%),
+      linear-gradient(45deg, var(--bg) 25%, transparent 25%);
+    background-size: 100px 100px;
+    background-color: var(--wave);
     display: flex;
     flex-direction: row;
   }
+  
+
+  #fishRight {
+    position: absolute;
+    top:30px;
+    right:1;
+   
+    /* float: right; */
+
+    height: auto;
+    border-radius: 1 1 8px 1;
+    padding: 225px;
+    margin-left: 50px;
+  }
+
   nav {
     width: 25vw;
     height: 100vh;
   }
+
+  
   header {
     float: left;
     width: 225px;
@@ -19,14 +44,16 @@ body {
     padding: 10px;
     margin-right: 10px;
   }
+  
   h1 {
-    font-size: 52px;
-    color: rgb(100, 237, 205);
+    font-family: Gloria Hallelujah;
+    font-size: 64px;
+    color: rgb(17, 96, 70);
     margin: 10px 0;
-    font-family: "Times New Roman", Times, serif;
+    font-family: "Gloria Hallelujah", cursive;
   }
   h2 {
-    font-family: "Times New Roman", Times, serif;
+    font-family: "Gloria Hallelujah", cursive;
   }
   ul {
     padding: 0;
@@ -45,32 +72,33 @@ body {
     display: flex;
     flex-direction: column;
     max-width: fit-content;
-    background: repeating-linear-gradient(
+    /* background: (
       45deg,
       transparent,
       transparent 10px,
       lavender 10px,
       lavender 20px
-    );
+    ); */
   }
   #fish_list li {
     font-size: 2vh;
     margin-top: 4vh;
     padding-top: 4vh;
     background-color: cornflowerblue;
-    border-top-left-radius: 30%;
-    border-top-right-radius: 30%;
-    height: 7vh;
+    border-top-left-radius: 50%;
+    border-top-right-radius: 50%;
+    height: 8vh;
     display: flex;
     justify-content: center;
     align-items: center;
     cursor: pointer;
   }
+
   #fish_list li:hover {
     color: white;
   }
   .fish_details h2 {
-    font-size: 32px;
+    font-size: 48px;
     text-align: center;
     align-items: center;
   }
@@ -78,6 +106,7 @@ body {
     font-size: 24px;
   }
   .fish_details img {
+    border: 8px solid cornflowerblue;
     display: block;
     height: 200px;
     margin: 0 auto 25px auto;
@@ -92,17 +121,17 @@ body {
     height: 100px;
     border: 1px solid gray;
     padding: 5px;
-    font-size: 14px;
+    font-size: 20px;
     margin-bottom: 10px;
   }
   form button[type=“submit”] {
     border: none;
-    font-size: 16px;
-    font-weight: 600;
+    font-size: 24px;
+    font-weight: 800;
     text-transform: uppercase;
     background-color: cornflowerblue;
     color: #fff;
-    padding: 7px 10px;
+    padding: 15px 20px;
     cursor: pointer;
   }
   #review_list li {
