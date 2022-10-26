@@ -2,10 +2,15 @@
   <head>
     <meta charset="UTF-8" />
     <title>Delicious Fish</title>
-    <link
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Gloria+Hallelujah&display=swap" rel="stylesheet">
+
+    <!-- <link
       href="https://fonts.googleapis.com/css?family=Great+Vibes|Open+Sans:400,600&display=swap"
       rel="stylesheet"
-    />
+    /> -->
     <link rel="stylesheet" type="text/css" href="style.css" />
     <script defer type="text/javascript" src="index.js"></script>
   </head>
@@ -29,13 +34,16 @@
         />
         <p>
           <em id="fish_description">Fish Description Goes Here</em>
-          <div id="nutrition">Nutrition Information (Raw):</div>
+          <div id="fishRight">
+            <div id="nutrition">Nutrition Information (Raw):</div>
             <li id="calories"></li>
             <li id="protein"></li>
             <li id="total_fat"></li>
             <li id="carbohydrate"></li>
-          <div id="taste">Taste goes here</div>
-          <div id="texture">Texture goes here</div>
+            <div id="taste">Taste:</div>
+            <div id="texture">Texture:</div>
+        </div>
+          
         </p>
         <a id="recipes" href="" target="_blank" rel="noreferrer noopener"> 
             <button id="recipes_button">Recipes Galore!</button>
