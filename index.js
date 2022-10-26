@@ -10,48 +10,60 @@ const fishCarbohydrate = document.querySelector('#carbohydrate')
 const fishTaste = document.querySelector('#taste')
 const fishTexture = document.querySelector('#texture')
 const fishNavList = document.querySelector('#fish_list')
+const fishRecipes = document.querySelector('#recipes')
 
+const btn = document.querySelector('#recipes_button')
+
+let selectedFish = null
 
 
 fetch('https://www.fishwatch.gov/api/species')
  .then(response => response.json() )
  .then(fetchedItems => {
     console.log(fetchedItems)
-    displayInfo(fetchedItems[0])
+    selectedFish = fetchedItems[0]
+    displayInfo(selectedFish)
     fetchedItems.forEach( fetchedItem => {
         const li = document.createElement('li')
         li.textContent = fetchedItem['Species Name']
-        fishNavList.append(li) 
-    
+        
         li.addEventListener('click', (e) => {
-                e.preventDefault()
-                displayInfo(fetchedItem)
+            e.preventDefault()
+            selectedFish = fetchedItem
+            displayInfo(selectedFish)
                 
-            })})
+        })
+        
+        fishNavList.append(li) 
+        })
 
-        // li.addEventListener('click', (e) => {
-        //     e.preventDefault()
-        //     displayInfo(fetchedItem)
-            
-        // })
+        
     })
 
 function displayInfo(fishItem) {
     topFishName.textContent = fishItem['Species Name']
-    if (fishItem['Image Gallery'] === null) {
-    fishImage.textContent = 'No Image Available'} else {
-    fishImage.src = fishItem['Image Gallery'][0].src}
-    fishPhysicalDescription.textContent = fishItem['Physical Description']
-    .replace('<ul>', '').replace('</ul>', '').replace('<li>', '').replace('</li>','')
-    fishCalories.textContent = fishItem['Calories']
-    fishProtein.textContent = fishItem['Protein']
-    fishTotalFat.textContent = fishItem['Total Fat']
-    fishCarbohydrate.textContent = fishItem['Carbohydrate']
 
-    fishTaste.textContent = fishItem['Taste'].replace('<p>', '').replace('</p>', '').replace('&nbsp;', '')
-    fishTexture.textContent = fishItem['Texture']
-    
+    if (fishItem['Image Gallery'] === null) {
+    fishImage.src = 'https://cdn.drawception.com/images/panels/2016/6-13/mfc9ANNDpA-6.png'} else {
+    fishImage.src = fishItem['Image Gallery'][0].src}
+
+    fishPhysicalDescription.textContent = fishItem['Physical Description']
+    .replaceAll('<ul>', '').replaceAll('</ul>', '').replaceAll('<li>', '').replaceAll('</li>','')
+
+    fishCalories.textContent = `Calories: ` + fishItem['Calories']
+    fishProtein.textContent = `Protein: ` + fishItem['Protein']
+    fishTotalFat.textContent = `Total Fat: ` + fishItem['Total Fat']
+    fishCarbohydrate.textContent = `Carbohydrate: ` + fishItem['Carbohydrate']
+
+    fishTaste.textContent = `Taste: ` + fishItem['Taste'].replaceAll('<p>', '').replaceAll('</p>', '').replaceAll('&nbsp;', '')
+    fishTexture.textContent = `Texture: ` + fishItem['Texture'].replaceAll('<p>', '').replaceAll('</p>', '').replaceAll('&nbsp;', '')
+
+    fishRecipes.href = `https://www.simplyrecipes.com/search?q=${fishItem['Species Name']}`    
 }
+
+
+
+
  
 
 
