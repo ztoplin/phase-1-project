@@ -14,132 +14,225 @@ body {
     background-color: var(--wave);
     display: flex;
     flex-direction: row;
-  }
-  
-
-  #fishRight {
-    position: absolute;
-    top:30px;
-    right:1;
-   
-    /* float: right; */
-
-    height: auto;
-    border-radius: 1 1 8px 1;
-    padding: 225px;
-    margin-left: 50px;
-  }
-
-  nav {
-    width: 25vw;
-    height: 100vh;
-  }
-
-  
-  header {
-    float: left;
-    width: 225px;
-    height: auto;
-    border-radius: 0 0 6px 0;
-    padding: 10px;
-    margin-right: 10px;
-  }
-  
-  h1 {
-    font-family: Gloria Hallelujah;
-    font-size: 64px;
-    color: rgb(17, 96, 70);
-    margin: 10px 0;
-    font-family: "Gloria Hallelujah", cursive;
-  }
-  h2 {
-    font-family: "Gloria Hallelujah", cursive;
-  }
-  ul {
-    padding: 0;
-  }
-  li {
-    list-style: none;
-  }
-  main {
-    /* float: left; */
-    margin-left: 100px;
-    width: 200px;
-  }
-  #fish_list {
-    overflow: scroll;
-    height: 90vh;
-    display: flex;
-    flex-direction: column;
-    max-width: fit-content;
-    /* background: (
-      45deg,
-      transparent,
-      transparent 10px,
-      lavender 10px,
-      lavender 20px
-    ); */
-  }
-  #fish_list li {
-    font-size: 2vh;
-    margin-top: 4vh;
-    padding-top: 4vh;
-    background-color: cornflowerblue;
-    border-top-left-radius: 50%;
-    border-top-right-radius: 50%;
-    height: 8vh;
-    display: flex;
     justify-content: center;
-    align-items: center;
-    cursor: pointer;
   }
 
-  #fish_list li:hover {
-    color: white;
-  }
-  .fish_details h2 {
-    font-size: 48px;
-    text-align: center;
-    align-items: center;
-  }
-  .fish_details h3 {
-    font-size: 24px;
-  }
-  .fish_details img {
-    border: 8px solid cornflowerblue;
-    display: block;
-    height: 200px;
-    margin: 0 auto 25px auto;
-  }
-  form {
-    width: 450px;
-    margin: 0 auto 50px auto;
-  }
-  textarea {
-    display: block;
-    width: 100%;
-    height: 100px;
-    border: 1px solid gray;
-    padding: 5px;
+header {
+float: left;
+width: 225px;
+height: auto;
+border-radius: 0 0 6px 0;
+padding: 10px;
+margin-right: 10px;
+}
+
+h1 {
+font-family: Gloria Hallelujah;
+font-size: 64px;
+color: rgb(17, 96, 70);
+margin: 10px 0;
+font-family: "Gloria Hallelujah", cursive;
+}
+
+nav {
+width: 25vw;
+height: 100vh;
+}
+
+
+#fish_list {
+overflow: scroll;
+height: 90vh;
+display: flex;
+flex-direction: column;
+max-width: fit-content;
+/* background: (
+45deg,
+transparent,
+transparent 10px,
+lavender 10px,
+lavender 20px
+); */
+}
+#fish_list li {
+font-size: 2vh;
+margin-top: 4vh;
+padding-top: 4vh;
+background-color: cornflowerblue;
+border-top-left-radius: 50%;
+border-top-right-radius: 50%;
+height: 8vh;
+display: flex;
+justify-content: center;
+align-items: center;
+cursor: pointer;
+transition: all 0.2s ease-in-out;
+}
+
+#fish_list li:hover {
+color: white;
+/* background-color: rgb(82, 255, 47); */
+transform: scale(1.25);
+}
+
+
+
+.fish_details {
+display: flex;
+/* border: solid red 2px; */
+flex-direction: row;
+width: 70%;
+
+}
+
+
+h2 {
+font-family: "Gloria Hallelujah", cursive;
+}
+
+ul {
+padding: 0;
+}
+
+#gen_info {
+justify-content: center;
+margin-left: 40px;
+}
+
+.fish_details h2 {
+font-size: 48px;
+text-align: center;
+align-items: center;
+
+}
+
+.fish_details img {
+border: 8px solid cornflowerblue;
+border-radius: 50% 20% / 10% 40%;
+display: block;
+width: 80%;
+margin: 0 auto 25px auto;
+}
+
+li {
+    list-style: none;
+}  
+  
+
+#eatingInfo {
+
+background-color: rgba(127, 255, 212, 0.285);
+border: 8px solid cornflowerblue;
+right:00px;
+max-width: 500px;
+
+
+height: auto;
+border-radius: 1 1 8px 1;
+padding: 25px;
+margin: 100px 10px;
+font-weight: bold;
+height: fit-content;
+border-radius: 10% 30% 42% 10%;
+
+}
+
+#calories {
+    margin: 10px;
+}
+
+#protein {
+    margin: 10px;
+}
+
+#total_fat {
+    margin: 10px;
+}
+
+#carbohydrate {
+    margin: 10px;
+}
+
+#taste {
+    margin: 10px;
+}
+
+#texture {
+    margin: 10px;
+}
+
+#recipes_button {
+    margin: 10px;
+    background-color: rgb(82, 255, 47);
+    border-radius: 20%;
     font-size: 20px;
-    margin-bottom: 10px;
-  }
-  form button[type=“submit”] {
-    border: none;
-    font-size: 24px;
-    font-weight: 800;
-    text-transform: uppercase;
-    background-color: cornflowerblue;
-    color: #fff;
-    padding: 15px 20px;
-    cursor: pointer;
-  }
-  #review_list li {
-    background-color: white;
-    border-radius: 5px;
-    padding: 20px;
-    margin-bottom: 20px;
-  }
+    font-family: "Gloria Hallelujah", cursive;
+    transition: all 0.2s ease-in-out;
+}
+
+#recipes_button:hover {
+    transform: scale(1.25);
+    color: rgb(9, 75, 197);
+    
+}
+
+.pointer {
+    position: absolute;
+    transform: translate(-50%, -50%);
+    top: 50%;
+    left: 50%;
+    /* width: 40px;
+    height: 40px; */
+    background: rgba(147, 199, 231, 0.5);
+    border: 1px solid rgba(107, 182, 229, 0.5);
+    border-radius: 50%;
+    pointer-events: none;
+    box-sizing: border-box;
+    transition: 0.3s;
+}
+ .pointer1
+ {
+    transition: 0.05s;
+    width: 40px;
+    height: 40px;
+ }
+ .pointer2
+ {
+    transition: 0.15s;
+    width: 25px;
+    height: 25px;
+ }
+ .pointer3
+ {
+    transition: 0.27s;
+    width: 30px;
+    height: 30px;
+ }
+ .pointer4
+ {
+    transition: 0.52s;
+    width: 15px;
+    height: 15px;
+ }
+ .pointer5
+ {
+    transition: 0.75s;
+    width: 8px;
+    height: 8px;
+ }
+/* .pointer {
+    position: absolute;
+    top: 50%; 
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 40px;
+    height: 40px;
+    background: rgba(239, 10, 10, 0.505);
+    border: 1px solid rgba(255, 255, 255, .1);
+    border-radius: 50%;
+    pointer-events: none;
+    box-sizing: border-box;
+} */
 
 
 

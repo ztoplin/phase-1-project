@@ -6,51 +6,55 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Gloria+Hallelujah&display=swap" rel="stylesheet">
-
-    <!-- <link
-      href="https://fonts.googleapis.com/css?family=Great+Vibes|Open+Sans:400,600&display=swap"
-      rel="stylesheet"
-    /> -->
     <link rel="stylesheet" type="text/css" href="style.css" />
     <script defer type="text/javascript" src="index.js"></script>
   </head>
   <body>
-    <header>
-      <h1>Delicious Fish!</h1>
-      <nav>
-        <ul id="fish_list">
-          
-        </ul>
-      </nav>
-    </header>
+    <div class="trail">
+    <div class="pointer pointer1"></div>
+    <div class="pointer pointer2"></div>
+    <div class="pointer pointer3"></div>
+    <div class="pointer pointer4"></div>
+    <div class="pointer pointer5"></div>
+</div>
+    <script src="https://code.jquery.com/jquery-3.6.1.js"></script>
+    <script type="text/javascript">
+        $(document).mousemove(function(e){
+            $('.pointer').css({left:e.pageX, top:e.pageY});
+        })
+    </script>
+            <header>
+            <h1>Delicious Fish!</h1>
+            <nav>
+                <ul id="fish_list">
+                </ul>
+            </nav>
+            </header>
 
-    <main>
-      <div class="fish_details">
-        <h2 id="fish_name">Fish Name Goes Here</h2>
-        <img
-          id="fish_image"
-          alt="Fish Name Goes Here"
-          src=""
-        />
-        <p>
-          <em id="fish_description">Fish Description Goes Here</em>
-          <div id="fishRight">
-            <div id="nutrition">Nutrition Information (Raw):</div>
-            <li id="calories"></li>
-            <li id="protein"></li>
-            <li id="total_fat"></li>
-            <li id="carbohydrate"></li>
-            <div id="taste">Taste:</div>
-            <div id="texture">Texture:</div>
-        </div>
-          
-        </p>
-        <a id="recipes" href="" target="_blank" rel="noreferrer noopener"> 
-            <button id="recipes_button">Recipes Galore!</button>
-        </a>
 
-       
-      </div>
-    </main>
+            <div class="fish_details">
+                <div id="gen_info">
+                    <h2 id="fish_name">Fish Name Goes Here</h2>
+                    <img
+                    id="fish_image"
+                    alt="Fish Name Goes Here"
+                    src=""
+                    />
+                    <p id="fish_description">Fish Description Goes Here</p>
+                </div>
+            </div>
+
+            <div id="eatingInfo">
+                <div id="nutrition">Nutrition Information (Raw, per 100 g):</div>
+                <li id="calories"></li>
+                <li id="protein"></li>
+                <li id="total_fat"></li>
+                <li id="carbohydrate"></li>
+                <div id="taste">Taste:</div>
+                <div id="texture">Texture:</div>
+                <a id="recipes" href="" target="_blank" rel="noreferrer noopener"> 
+                    <button id="recipes_button">Recipes Galore!</button>
+                </a>
+            </div>    
   </body>
 </html>

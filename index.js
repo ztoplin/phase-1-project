@@ -52,7 +52,7 @@ function displayInfo(fishItem) {
 
     fishCalories.textContent = `Calories: ` + fishItem['Calories']
     fishProtein.textContent = `Protein: ` + fishItem['Protein']
-    fishTotalFat.textContent = `Total Fat: ` + fishItem['Total Fat']
+    fishTotalFat.textContent = `Total Fat: ` + fishItem['Fat, Total']
     fishCarbohydrate.textContent = `Carbohydrate: ` + fishItem['Carbohydrate']
 
     fishTaste.textContent = `Taste: ` + fishItem['Taste'].replaceAll('<p>', '').replaceAll('</p>', '').replaceAll('&nbsp;', '')
@@ -61,10 +61,6 @@ function displayInfo(fishItem) {
     fishRecipes.href = `https://www.simplyrecipes.com/search?q=${fishItem['Species Name']}`    
 }
 
-
-
-
- 
 
 
 
